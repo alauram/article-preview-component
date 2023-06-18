@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: var(--white);
+  }
+body {
+    background-color: var(--Light-Grayish-Blue);
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card {
+    display: flex;
+    border-radius: 1rem;
+    background-color: white;
+    width: 70%;
+}
+
+.img {
+    width: 35%;
+}
+.img img {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    width: 100%;
+    margin: none;
+    height: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    position: relative;
+    gap: 15px;
+    padding: 5%;
+}
+
+.text1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--Very-Dark-Grayish-Blue);
+    line-height: 2.1rem;
+}
+.text1:hover {
+    filter: invert(1);
+}
+.text2 {
+    font-size: 1rem;
+    line-height: 1.7rem;
+    color: var(--Desaturated-Dark-Blue);
+}
+
+.photo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.profile {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: none;
+}
+.icon {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-direction: row;
+    padding: 5px;
+}
+.details .name {
+    color: var(--Very-Dark-Grayish-Blue);
+    font-weight: 700;
+}
+.details .name:hover {
+    filter: invert(1);
+}
+
+.details .date {
+    color: var(--Grayish-Blue)
+}
+
+
+button {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 100%;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.25s ease;
+    color: var(--Desaturated-Dark-Blue);
+}
+.btn-two {
+    position: absolute;
+    bottom: 60px;
+}
+button:hover {
+    background: var(--Desaturated-Dark-Blue);
+    color: var(--Light-Grayish-Blue);
+}
+
+.open-share {
+    background: var(--Very-Dark-Grayish-Blue);
+    position: absolute;
+    bottom: 80px;
+    right: -170px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px -5px #0003;
+    transform-origin: bottom;
+    transition: all 0.25s ease;
+    visibility: hidden;
+}
+
+.open-share p {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--Grayish-Blue);
+    margin-right: 5px;
+}
+
+.open-share .icons {
+    display: flex;
+    gap: 10px;
+    font-size: 23px;
+    color: white;
+}
+
+.open-share ion-icon:hover {
+    filter: invert(1);
+}
+.open-share.active {
+    scale: 1;
+    visibility: visible;
+}
+
+.open-share::after {
+    content: '';
+    background: var(--Very-Dark-Grayish-Blue);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -60%) rotate(45deg);
+}
+.hidden {
+    visibility: hidden;
+}
+@media screen and (max-width:600px){
+    .card {
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+    }
+    .img {
+        width: 100%;
+    }
+    .img img {
+        width: 100%;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 1rem;
+    }
+    .content {
+        width: 100%;
+        padding: 10% 10% 5%;
+    }
+    .text1 {
+        font-size: 1.5rem;
+        max-width: 100%;
+        line-height: 1.7rem;
+    }
+    .photo img {
+        width: 50px;
+        height: 50px;
+    }
+    .details .name {
+        font-size: 1.1rem;
+    }
+    
+    .details .date {
+        font-size: 1rem;
+    }
+    
+    .open-share {
+        width: 100%;
+        bottom: -35px;
+        left: 190px;
+        padding: 25px;
+    }
+    .open-share.active {
+        width: 100%;
+    }
+    .open-share::after{
+        display: none;
+    }
+
+}
